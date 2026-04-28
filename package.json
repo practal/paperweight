@@ -1,0 +1,54 @@
+{
+  "name": "paperweight",
+  "version": "0.0.1",
+  "description": "Paperweight implementation of abstraction logic.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && ./fixup",
+    "rx": "npm run build && node dist/esm/rx/syntax.js",
+    "test": "npm run build && node dist/esm/package.test.js && node dist/cjs/package.test.js",
+    "cloc": "cloc src --include-lang=TypeScript",
+    "check-implication": "npm run build && node dist/esm/other/check-implication.js", 
+    "Example-6": "npm run build && node dist/esm/theories/Example-6.theory.js",
+    "Example-13": "npm run build && node dist/esm/theories/Example-13.theory.js",
+    "Implication": "npm run build && node dist/esm/theories/Implication.theory.js",
+    "Pure-Equality": "npm run build && node dist/esm/theories/Pure-Equality.theory.js",
+    "Equality": "npm run build && node dist/esm/theories/Equality.theory.js",
+    "Negation": "npm run build && node dist/esm/theories/Negation.theory.js",
+    "Universal": "npm run build && node dist/esm/theories/Universal.theory.js",
+    "Positive-Logic": "npm run build && node dist/esm/theories/Positive-Logic.theory.js",
+    "Minimal-Logic": "npm run build && node dist/esm/theories/Minimal-Logic.theory.js",
+    "Paraconsistent-Logic": "npm run build && node dist/esm/theories/Paraconsistent-Logic.theory.js",
+    "S4": "npm run build && node dist/esm/theories/S4.theory.js",    
+    "Kripke-S4": "npm run build && node dist/esm/theories/Kripke-S4.theory.js",
+    "Dependent-Types": "npm run build && node dist/esm/theories/Dependent-Types.theory.js",
+    "Lambda-Calculus": "npm run build && node dist/esm/theories/Lambda-Calculus.theory.js",
+    "Inconsistent-Lambda-Calculus": "npm run build && node dist/esm/theories/Inconsistent-Lambda-Calculus.theory.js",
+    "Category-Theory": "npm run build && node dist/esm/theories/Category-Theory.theory.js",
+    "Intuitionistic-Predicate-Logic": "npm run build && node dist/esm/theories/Intuitionistic-Predicate-Logic.theory.js",
+    "Classical-Predicate-Logic": "npm run build && node dist/esm/theories/Classical-Predicate-Logic.theory.js",
+    "Peano": "npm run build && node dist/esm/theories/Peano.theory.js",
+    "Peano-Recursion": "npm run build && node dist/esm/theories/Peano-Recursion.theory.js",
+    "Peano-Theorems": "npm run build && node dist/esm/theories/Peano-Theorems.theory.js",
+    "Quantum": "npm run build && node dist/esm/theories/Quantum.theory.js",
+    "Algebraic-Effects": "npm run build && node dist/esm/theories/Algebraic-Effects.theory.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@practal/parsing": "^0.1.2",
+    "@practal/rx": "^0.1.3",
+    "things": "^4.8.7"
+  }
+}
