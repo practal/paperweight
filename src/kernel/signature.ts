@@ -83,7 +83,7 @@ function isVariadic<Id>(spec : AritySpec<Id>) : boolean {
 function aritySpecsOverlap<Id>(spec1 : AritySpec<Id>, spec2 : AritySpec<Id>) : boolean {
     const variadic1 = isVariadic(spec1);
     const variadic2 = isVariadic(spec2);
-    if (variadic1 && variadic1) return true;
+    if (variadic1 && variadic2) return true;
     const arity1 = arityOfSpec(spec1);
     const arity2 = arityOfSpec(spec2);    
     if (!variadic1 && !variadic2) return arity1 === arity2;
